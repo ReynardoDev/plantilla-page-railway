@@ -1,4 +1,5 @@
-require('dotenv').config();
+// Cargar variables de entorno solo si existe .env (desarrollo local)
+require('dotenv').config({ path: '.env', optional: true });
 const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
@@ -33,6 +34,8 @@ app.use((req, res) => {
     res.status(404).send('404 - Page Not Found');
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
-})
+// Escuchar en 0.0.0.0 para permitir conexiones externas (necesario para Railway)
+app.listen(port, '0.0.0.0', () => {
+    console.log(`✅ Server running on port ${port}`);
+    console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+});
