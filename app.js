@@ -1,5 +1,3 @@
-// Cargar variables de entorno solo si existe .env (desarrollo local)
-require('dotenv').config({ path: '.env', optional: true });
 const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
@@ -9,7 +7,7 @@ console.log(`📍 Directorio de trabajo: ${__dirname}`);
 console.log(`🔧 Node version: ${process.version}`);
 
 const app = express();
-const port = process.env.PORT || 65350;
+const port = process.env.PORT || 3000;
 
 console.log(`🔌 Puerto configurado: ${port}`);
 
