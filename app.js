@@ -7,7 +7,7 @@ console.log(`📍 Directorio de trabajo: ${__dirname}`);
 console.log(`🔧 Node version: ${process.version}`);
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 65350;
 
 console.log(`🔌 Puerto configurado: ${port}`);
 
